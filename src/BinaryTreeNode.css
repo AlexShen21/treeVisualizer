@@ -1,0 +1,63 @@
+.node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.node-content {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.add-options-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line-container {
+    position: absolute;
+    top: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 50px; /* Adjust based on the distance between plus signs */
+}
+
+.line {
+    width: 2px;
+    height: 20px; /* Adjust based on the length of the line */
+    background-color: black;
+    position: relative;
+    top: -10px;
+}
+
+.plus-sign-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50px; /* Adjust based on the distance between plus signs */
+    margin-top: 20px; /* Adjust based on the space between the lines and plus signs */
+}
+
+.plus-sign {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.children {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}

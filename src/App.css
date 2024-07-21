@@ -1,8 +1,20 @@
 .Title{
+    font-size: 45px;
+    color: #fff;
     text-align: center;
-}
+    animation: glow 1s ease-in-out infinite alternate;
+  }
 
-/* src/App.css */
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #a2beff, 0 0 30px #33a4f5, 0 0 40px #2e8ff7, 0 0 50px #067dfb, 0 0 60px #0776ff;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #93f1ca, 0 0 40px #23fbc8, 0 0 50px #0ff8c1, 0 0 60px #06eeff, 0 0 70px #00c3ff;
+    }
+  }
+
 .node {
     display: flex;
     flex-direction: column;
@@ -10,8 +22,8 @@
 }
 
 .node-content {
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     border-width: 2px;
     border-style: solid;
@@ -29,25 +41,45 @@
     width: 100%;
 }
 
-.left-line, .right-line {
-    position: relative;
-    height: 1px;
-    background-color: #000000;
-    bottom: -10px;  
+.Actions{
+    display: flex;
+    justify-content: right;
+    margin-right: 200px;
+}
+.Run {
+    background-color: #0486aa;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 52%;
+    border-radius: 40px;
 }
 
-.left-line {
-    width: 60px;  
-    transform: rotate(-45deg);  
-    left: 0;
-    transform-origin: 0% 0%;  
-    z-index: -1;
-}
+.Add {
+    background-color: #0486aa;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 4%;
+    border-radius: 40px;
+  }
 
-.right-line {
-    width: 60px;  
-    transform: rotate(45deg);  
-    right: 0;
-    transform-origin: 100% 0%; 
-    z-index: -1;
-}
+  .Remove {
+    background-color: #0486aa;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 40px;
+  }
