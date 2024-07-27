@@ -1,19 +1,41 @@
 import React, { useState } from 'react';
 import TreeContainer from './TreeContainer';
-import { addLevel, removeLevel } from './TreeActions';
+import { addLevel, removeLevel, bfs, inOrder, preOrder, postOrder, isRunning } from './TreeActions';
 import BinaryTreeNodeClass from './BinaryTreeNodeClass';
 import './App.css';
 
 const App = () => {
-  const [root, setRoot] = useState(new BinaryTreeNodeClass(1));
+  const [bgColor, setBgColor] = useState('white');
+  const [root, setRoot] = useState(new BinaryTreeNodeClass(1, bgColor));
+
 
   const handleAddLevel = () => {
+    if (isRunning) return;
     setRoot((prevRoot) => addLevel(prevRoot));
   };
 
   const handleRemoveLevel = () => {
+    if (isRunning) return;
     setRoot((prevRoot) => removeLevel(prevRoot));
   };
+
+
+  const handleRunBfs = () => {
+    bfs(root, setRoot);
+  }
+
+  const handleRunInOrder = () => {
+    inOrder(root, setRoot);
+  } 
+
+  const handleRunPreOrder = () => {
+    preOrder(root, setRoot);
+  }
+
+
+  const handleRunPostOrder = () => {
+    postOrder(root, setRoot);
+  }
 
   return (
     <div className='App'>
@@ -21,7 +43,7 @@ const App = () => {
         <h1 className='Title'>Tree Algorithm Visualizer</h1>
       </div>
       <div className='Actions'>
-        <button className = 'Run'>
+        <button className = 'Run' onClick = {handleRunPostOrder}>
           Run Algorithm!
         </button>
         <button className = 'Add' onClick={handleAddLevel}>

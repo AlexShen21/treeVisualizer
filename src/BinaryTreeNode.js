@@ -4,6 +4,7 @@ import './BinaryTreeNode.css';
 const BinaryTreeNode = ({ node, updateLines, containerRef, scale }) => {
     const nodeRef = useRef(null);
 
+
     const updateNodePosition = useCallback(() => {
         if (nodeRef.current && containerRef.current) {
             const nodeRect = nodeRef.current.getBoundingClientRect();
@@ -35,7 +36,7 @@ const BinaryTreeNode = ({ node, updateLines, containerRef, scale }) => {
 
     return (
         <div className="node">
-            <div className="node-content" ref={nodeRef}>
+            <div className="node-content" ref={nodeRef} style={{backgroundColor: node.color}}>
                 {node.value}
             </div>
             <div className="children">

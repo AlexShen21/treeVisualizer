@@ -1,18 +1,19 @@
 class BinaryTreeNodeClass {
-    constructor(value) {
+    constructor(value, color) {
       this.value = value;
       this.left = null;
       this.right = null;
       this.x = 0;
       this.y = 0;
+      this.color = color;
     }
   
     addLeft() {
-      this.left = new BinaryTreeNodeClass(this.value * 2);
+      this.left = new BinaryTreeNodeClass(this.value * 2, this.color);
     }
   
     addRight() {
-      this.right = new BinaryTreeNodeClass(this.value * 2 + 1);
+      this.right = new BinaryTreeNodeClass(this.value * 2 + 1, this.color);
     }
   
     addChildren() {
@@ -32,6 +33,10 @@ class BinaryTreeNodeClass {
     isLeaf() {
       return !this.left && !this.right;
     }
+
+
+
+
   }
   
 export default BinaryTreeNodeClass;
