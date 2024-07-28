@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import TreeContainer from './TreeContainer';
 import { addLevel, removeLevel, bfs, inOrder, preOrder, postOrder, isRunning } from './TreeActions';
 import BinaryTreeNodeClass from './BinaryTreeNodeClass';
-import Dropdown, { alg } from './DropDown';
+import Dropdown from './DropDown';
 import './App.css';
 
 const App = () => {
   const [bgColor, setBgColor] = useState('white');
   const [root, setRoot] = useState(new BinaryTreeNodeClass(1, bgColor));
+  const [alg, setAlg] = useState("Depth First Search");
+
+  const handleAlgChange = (alg) => {
+    setAlg(alg);
+  }
 
 
   const handleAddLevel = () => {
@@ -60,7 +65,7 @@ const App = () => {
       <div className='Container'>
         <h1 className='Title'>Tree Algorithm Visualizer</h1>
       </div>
-      <Dropdown/>
+      <Dropdown alg = {handleAlgChange}/>
       <div className='Actions'>
         <button className = 'Run' onClick = {runAlgorithm}>
           Run Algorithm!

@@ -1,22 +1,21 @@
 import React, {useState} from "react";
 import "./DropDown.css";
 
-let alg = "";
 
-function Dropdown() {
+function Dropdown( {alg} ) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(""); // Remove the default placeholder
 
     const handleOptionClick = (option) => {
-        alg = option;
         setSelectedOption(option);
         setIsOpen(false);
+        alg(option)
     };
 
     return (
         <div className="dropdown">
             <button className="dropdown-toggle" onClick={() => setIsOpen(!isOpen)}>
-                {selectedOption || "Select an Algorithm!"}
+                {selectedOption || "Depth First Search"} <span className="arrow">&darr;</span>
             </button>
             {isOpen && (
                 <div className="dropdown-menu">
@@ -47,4 +46,3 @@ function Dropdown() {
 }
 
 export default Dropdown;
-export {alg};
