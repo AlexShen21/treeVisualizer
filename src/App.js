@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TreeContainer from './TreeContainer';
 import { addLevel, removeLevel, bfs, inOrder, preOrder, postOrder, isRunning } from './TreeActions';
 import BinaryTreeNodeClass from './BinaryTreeNodeClass';
+import Dropdown, { alg } from './DropDown';
 import './App.css';
 
 const App = () => {
@@ -32,18 +33,36 @@ const App = () => {
     preOrder(root, setRoot);
   }
 
-
   const handleRunPostOrder = () => {
     postOrder(root, setRoot);
   }
+
+
+  const runAlgorithm = () => {
+    if (alg === "Depth First Search") {
+      handleRunPreOrder();
+    }
+    else if (alg === "Breadth First Search") {
+      handleRunBfs();
+    }
+    else if (alg === "InOrder Traversal") {
+      handleRunInOrder();
+    }
+    else if (alg === "PostOrder Traversal") {
+      handleRunPostOrder();
+    }
+  }
+
+
 
   return (
     <div className='App'>
       <div className='Container'>
         <h1 className='Title'>Tree Algorithm Visualizer</h1>
       </div>
+      <Dropdown/>
       <div className='Actions'>
-        <button className = 'Run' onClick = {handleRunPostOrder}>
+        <button className = 'Run' onClick = {runAlgorithm}>
           Run Algorithm!
         </button>
         <button className = 'Add' onClick={handleAddLevel}>
@@ -59,4 +78,3 @@ const App = () => {
 };
 
 export default App;
-

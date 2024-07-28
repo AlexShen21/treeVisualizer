@@ -44,8 +44,11 @@
 .Actions{
     display: flex;
     justify-content: right;
-    margin-right: 200px;
+    margin-right: 10%;
 }
+
+
+
 .Run {
     background-color: #0486aa;
     border: none;
