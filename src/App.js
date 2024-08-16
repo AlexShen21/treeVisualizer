@@ -6,7 +6,7 @@ import Dropdown from './DropDown';
 import './App.css';
 
 const App = () => {
-  const [bgColor, setBgColor] = useState('white');
+  const bgColor = 'white'
   const [root, setRoot] = useState(new BinaryTreeNodeClass(1, bgColor));
   const [alg, setAlg] = useState("Depth First Search");
 
